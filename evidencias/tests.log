@@ -1,0 +1,41 @@
+
+> divisor_cuenta_web@0.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.0.3 C:/Users/sebas/Documents/Codex/2026-10-09/files-mentioned-by-the-user-deber2/outputs/divisor_cuenta_web
+
+ ✓ test/pantalla.test.jsx > 100, 4 y 10 muestra 27.50 243ms
+ ✓ test/pantalla.test.jsx > 50 y 0 muestra error, ningún pago numérico y no calcula 31ms
+ ✓ test/pantalla.test.jsx > abc muestra Monto inválido 30ms
+ ✓ test/pantalla.test.jsx > un error retira el resultado anterior 42ms
+ ✓ test/pantalla.test.jsx > coma decimal, centavos y selector hacia arriba 43ms
+ ✓ test/pantalla.test.jsx > no acepta texto parcial ni hexadecimales como monto decimal 34ms
+ ✓ test/pantalla.test.jsx > personas fraccionarias y propina vacía son inválidas como en sdd 39ms
+ ✓ test/division.test.js > Seis casos originales > 1. reparto normal 3ms
+ ✓ test/division.test.js > Seis casos originales > 2. sin propina 1ms
+ ✓ test/division.test.js > Seis casos originales > 3. cero personas 1ms
+ ✓ test/division.test.js > Seis casos originales > 4. monto no numérico 0ms
+ ✓ test/division.test.js > Seis casos originales > 5. redondeo exacto 0ms
+ ✓ test/division.test.js > Seis casos originales > 6. redondeo hacia arriba 0ms
+ ✓ test/division.test.js > LSP: el mismo cálculo recibe ambas estrategias sin comprobar su tipo 0ms
+ ✓ test/validacion.test.js > rechaza límite {"monto":-1} 2ms
+ ✓ test/validacion.test.js > rechaza límite {"monto":null} 0ms
+ ✓ test/validacion.test.js > rechaza límite {"personas":1.5} 0ms
+ ✓ test/validacion.test.js > rechaza límite {"personas":null} 0ms
+ ✓ test/validacion.test.js > rechaza límite {"personas":null} 0ms
+ ✓ test/validacion.test.js > rechaza límite {"propina":-1} 0ms
+ ✓ test/validacion.test.js > rechaza límite {"propina":null} 0ms
+ ✓ test/validacion.test.js > rechaza límite {"propina":null} 0ms
+ ✓ test/validacion.test.js > rechaza límite {"monto":1e+308,"propina":100} 0ms
+ ✓ test/validacion.test.js > cero monto y cero propina válidos 0ms
+ ✓ test/validacion.test.js > OCP: tercera estrategia sin modificar el caso de uso 0ms
+
+ Test Files  3 passed (3)
+      Tests  25 passed (25)
+   Start at  19:38:26
+   Duration  5.27s (environment 70%, setup 16%, tests 10%, transform 2%, import 1%, worker 1%)
+
+    Isolate  3 workers spawned · ~1.27s startup each (spawn + environment, per file)
+             at least ~2.54s faster with isolate: false — reuses workers across files instead of one per file
+

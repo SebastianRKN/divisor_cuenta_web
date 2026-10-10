@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Evidencia de comandos solicitada, sin secretos
+!evidencias/*.log
+.env
+.env.*
+*.pem
+*.key
+

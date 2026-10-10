@@ -1,0 +1,9 @@
+
+ RUN  v5.0.3 C:/Users/sebas/Documents/Codex/2026-10-09/files-mentioned-by-the-user-deber2/outputs/divisor_cuenta_web
+
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  19:38:33
+   Duration  1.74s (environment 79%, setup 15%, transform 4%, worker 1%, import 1%, tests 1%)
+
