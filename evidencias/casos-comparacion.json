@@ -1,0 +1,9 @@
+{
+  "resultado": "PASS",
+  "fuente": "Dart real sdd 92fc101",
+  "casos": 6,
+  "entradas": "idénticas",
+  "esperados": "idénticos",
+  "errores": "idénticos",
+  "nan": "double.nan → NaN"
+}

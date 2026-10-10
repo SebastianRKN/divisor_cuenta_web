@@ -1,0 +1,16 @@
+
+ RUN  v5.0.3 C:/Users/sebas/Documents/Codex/2026-10-09/files-mentioned-by-the-user-deber2/outputs/divisor_cuenta_web
+
+ ✓ test/division.test.js > Seis casos originales > 1. reparto normal 3ms
+ ✓ test/division.test.js > Seis casos originales > 2. sin propina 1ms
+ ✓ test/division.test.js > Seis casos originales > 3. cero personas 1ms
+ ✓ test/division.test.js > Seis casos originales > 4. monto no numérico 0ms
+ ✓ test/division.test.js > Seis casos originales > 5. redondeo exacto 0ms
+ ✓ test/division.test.js > Seis casos originales > 6. redondeo hacia arriba 0ms
+ ✓ test/division.test.js > LSP: el mismo cálculo recibe ambas estrategias sin comprobar su tipo 0ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  19:28:07
+   Duration  1.95s (environment 77%, setup 15%, transform 5%, worker 1%, tests 1%, import 1%)
+

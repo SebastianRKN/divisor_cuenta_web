@@ -1,0 +1,28 @@
+const {chromium}=require('C:/Users/sebas/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const fs=require('node:fs'),path=require('node:path');
+(async()=>{
+ const root=path.resolve('outputs/divisor_cuenta_web/evidencias');
+ const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
+ const context=await browser.newContext({viewport:{width:1280,height:900}});
+ const page=await context.newPage(); const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.goto('http://127.0.0.1:5173');
+ await page.getByLabel('Monto total').fill('100');await page.getByLabel('Personas',{exact:true}).fill('4');await page.getByLabel('Propina (%)',{exact:true}).fill('10');
+ await page.getByRole('button',{name:'Calcular',exact:true}).click();
+ if(await page.getByTestId('pago').textContent()!=='27.50')throw Error('Desktop result mismatch');
+ await page.screenshot({path:path.join(root,'desktop.png'),fullPage:true});
+ await page.setViewportSize({width:390,height:844});
+ await page.screenshot({path:path.join(root,'movil.png'),fullPage:true});
+ const sizes=await page.evaluate(()=>({ancho:innerWidth,contenido:document.documentElement.scrollWidth}));
+ if(sizes.contenido>sizes.ancho)throw Error('Mobile overflow');
+ await page.getByLabel('Personas',{exact:true}).fill('0');await page.getByRole('button',{name:'Calcular',exact:true}).click();
+ if(await page.getByTestId('pago').count())throw Error('Stale result');
+ if(await page.getByRole('alert').textContent()!=='Debe haber al menos una persona')throw Error('Error mismatch');
+ await page.screenshot({path:path.join(root,'error-movil.png'),fullPage:true});
+ await context.setOffline(true);
+ await page.getByLabel('Monto total').fill('10');await page.getByLabel('Personas',{exact:true}).fill('3');await page.getByLabel('Propina (%)',{exact:true}).fill('0');
+ await page.getByLabel('Redondeo',{exact:true}).selectOption('arriba');await page.getByRole('button',{name:'Calcular',exact:true}).click();
+ if(await page.getByTestId('pago').textContent()!=='4.00')throw Error('Offline mismatch');
+ if(errors.length)throw Error(errors.join('\n'));
+ fs.writeFileSync(path.join(root,'browser-qa.json'),JSON.stringify({fecha:new Date().toISOString(),navegador:'Microsoft Edge / Playwright',desktop:'PASS 27.50',movil:sizes,error:'PASS sin resultado',offline:'PASS cálculo después de desconectar la página cargada',errores:errors},null,2));
+ await browser.close();console.log('PASS desktop, móvil 390px, error sin pago y cálculo offline');
+})().catch(e=>{console.error(e);process.exit(1)});

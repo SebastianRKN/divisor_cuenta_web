@@ -1,0 +1,12 @@
+{
+  "fecha": "2026-10-10T00:30:16.754Z",
+  "navegador": "Microsoft Edge / Playwright",
+  "desktop": "PASS 27.50",
+  "movil": {
+    "ancho": 390,
+    "contenido": 390
+  },
+  "error": "PASS sin resultado",
+  "offline": "PASS cálculo después de desconectar la página cargada",
+  "errores": []
+}

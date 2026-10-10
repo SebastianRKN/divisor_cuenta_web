@@ -1,0 +1,6 @@
+src/data/redondeoExacto.js:2:export const redondeoExacto = Object.freeze({ aplicar: valor => Math.round(valor * 100) / 100 })
+src/data/redondeoHaciaArriba.js:2:export const redondeoHaciaArriba = Object.freeze({ aplicar: valor => Math.ceil(valor) })
+src/main.jsx:3:import { redondeoExacto } from './data/redondeoExacto.js'
+src/main.jsx:4:import { redondeoHaciaArriba } from './data/redondeoHaciaArriba.js'
+src/main.jsx:13:    exacto: { ...redondeoExacto, etiqueta: 'Exacto' },
+src/main.jsx:14:    arriba: { ...redondeoHaciaArriba, etiqueta: 'Hacia arriba' },

@@ -1,0 +1,47 @@
+diff --git a/evidencias/original/constitution.md b/.specify/memory/constitution.md
+index 382e05d..15bcf57 100644
+--- a/evidencias/original/constitution.md
++++ b/.specify/memory/constitution.md
+@@ -1,26 +1,26 @@
+-# App divisor de cuentas Constitution
++# Divisor de cuenta web Constitution
+ 
+ ## Core Principles
+ 
+ ### I. SRP
+-Una clase tiene una razón de cambio. El cálculo no valida ni formatea.
++Una función o módulo tiene una razón de cambio. El cálculo no valida ni formatea.
+ 
+ ### II. OCP
+-Agregar una regla de redondeo no obliga a modificar las clases de cálculo existentes.
++Agregar una regla de redondeo no obliga a modificar los módulos de cálculo existentes.
+ 
+ ### III. LSP
+ Cualquier EstrategiaRedondeo puede sustituir a otra sin casts ni comprobaciones de tipo.
+ 
+ ### IV. ISP
+-Interfaces pequeñas. EstrategiaRedondeo expone solamente una operación necesaria: redondear.
++Interfaces pequeñas. EstrategiaRedondeo expone solamente una operación necesaria: aplicar.
+ 
+ ### V. DIP
+ presentation depende de abstracciones de domain, nunca de implementaciones concretas de data.
+ 
+ ## Arquitectura y seguridad
+ - Capas presentation / domain / data; dependencia presentation -> domain <- data.
+-- lib/domain/ no importa package:flutter.
+-- main.dart es el único punto de composición de implementaciones concretas en producción.
++- src/domain/ no importa react ni depende del DOM: es JavaScript puro.
++- src/main.jsx es el único punto de composición de implementaciones concretas en producción.
+ - Nunca guardar secretos ni API keys.
+ 
+ ## Calidad, pruebas y regla de la materia
+@@ -30,6 +30,7 @@ presentation depende de abstracciones de domain, nunca de implementaciones concr
+ ## Governance
+ Esta versión registra las reglas solicitadas, sin principios adicionales.
+ Las verificaciones se documentan en analyze.md y en la evidencia de la práctica.
+-La restricción de composición se aplica a lib/; las pruebas crean sus estrategias para verificar LSP.
++La restricción de composición se aplica a src/; las pruebas crean sus estrategias para verificar LSP.
++
++**Version**: 1.0.1 | **Ratified**: 2026-10-01 | **Last Amended**: 2026-10-09
+ 
+-**Version**: 1.0.0 | **Ratified**: 2026-10-01 | **Last Amended**: 2026-10-01

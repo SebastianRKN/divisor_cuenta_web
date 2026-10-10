@@ -1,0 +1,7 @@
+{
+  "fecha": "2026-10-10T00:40:40.171Z",
+  "archivos": 131,
+  "patrones": "tokens GitHub/OpenAI, claves privadas, archivos .env/.pem/.key",
+  "hallazgos": [],
+  "limite": "Escaneo de patrones y revisión; no prueba universal de ausencia de secretos."
+}

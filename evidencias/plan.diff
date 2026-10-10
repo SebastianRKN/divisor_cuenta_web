@@ -1,0 +1,102 @@
+diff --git a/evidencias/original/plan.md b/specs/001-divisor-cuenta/plan.md
+index da5f52a..b451c23 100644
+--- a/evidencias/original/plan.md
++++ b/specs/001-divisor-cuenta/plan.md
+@@ -1,42 +1,63 @@
+-# Implementation Plan: Divisor de cuenta
+-**Branch**: sdd | **Date**: 2026-10-01 | **Spec**: [spec.md](spec.md)
++# Implementation Plan: Divisor de cuenta web
++**Branch**: main | **Date**: 2026-10-09 | **Spec**: [spec.md](spec.md)
++**Input**: copia byte por byte de la rama sdd, commit 92fc101.
+ 
+ ## Summary
+-Una pantalla Flutter, estado local con setState, cálculo Dart puro y estrategias inyectadas.
++Una pantalla React, useState local, JavaScript puro y estrategias inyectadas.
++La spec no se modifica. La etiqueta histórica Feature Branch: sdd se conserva como procedencia.
+ 
+ ## Technical Context
+-Flutter estable 3.47.1; Dart 3.13.1. Sin nuevas dependencias de ejecución.
+-flutter_test y flutter_lints ya pertenecen a la plantilla base.
+-Sin almacenamiento ni red. Plataforma de entrega: Android debug.
+-Alcance: una pantalla, operaciones constantes; sin objetivos de latencia inventados.
++- Language/Version: JavaScript ESM; Node observado v24.21.0.
++- Dependencies: React 19.3.0, Vite 8.3.4; versiones resueltas en package-lock.json.
++- Storage: ninguno; sin llamadas de negocio a red, sin backend ni base de datos.
++- Testing: Vitest, jsdom, Testing Library y jest-dom; runner npm test = vitest run.
++- Target Platform: navegador web desktop/móvil; build estático servido localmente sin Internet.
++- Project Type: aplicación de una pantalla.
++- Performance: operaciones constantes; no inventar objetivos de latencia.
++- Constraints: preserve seis escenarios, errores literales, dos decimales y SOLID.
++- Scope: un formulario; sin funciones adicionales, sin librerías externas de estado.
+ 
+ ## Constitution Check
+-Antes y después del diseño: SRP separa cálculo, validación y formato; OCP/LSP mediante
+-EstrategiaRedondeo; ISP una operación; DIP con interfaces de validación y cálculo en domain.
+-Sin Flutter en domain. main compone las estrategias y dependencias.
+-Los tests pueden crear implementaciones concretas fuera de lib/, pues deben comprobarlas.
++Antes/después del diseño: PASS. SRP separa validar/calcular/formatear; OCP y LSP reciben
++EstrategiaRedondeo con aplicar(valor); ISP contrato de una operación; DIP hook recibe
++funciones y mapa de estrategias. Domain no importa React/DOM. main.jsx compone todo.
++Las pruebas pueden componer dependencias fuera de src/.
+ 
+ ## Project Structure
+-- lib/domain/cuenta.dart: datos inmutables del cálculo.
+-- lib/domain/resultado.dart: pago por persona.
+-- lib/domain/estrategia_redondeo.dart: interfaz con redondear(double).
+-- lib/domain/calcular_division.dart: interfaz CalculadorDivision y caso de uso CalcularDivision;
+-  ejecutar recibe Cuenta ya validada y EstrategiaRedondeo. No valida ni formatea.
+-- lib/domain/validar_entrada.dart: interfaz ValidadorEntrada y ValidarEntrada; devuelve error o null.
+-- lib/data/redondeo_exacto.dart: centavos, usando aritmética.
+-- lib/data/redondeo_hacia_arriba.dart: techo entero.
+-- lib/presentation/divisor_controller.dart: parsea, valida, coordina y devuelve resultado/error;
+-  recibe abstracciones de domain por constructor y mapa de estrategias.
+-- lib/presentation/formateador_moneda.dart: exclusivamente dos decimales.
+-- lib/presentation/pantalla_divisor.dart: campos, selector, botón, mensajes; setState.
+-- lib/main.dart: composición de dependencias y arranque.
+-- test/casos_de_prueba.dart: exactamente seis datos de aceptación.
+-- test/division_test.dart: seis pruebas y LSP sin widgets.
+-- test/pantalla_test.dart: seis escenarios de interfaz y regresión de resultado obsoleto.
+-- test/validacion_test.dart: límites inválidos y sustitución por tercera estrategia de prueba.
+-
+-## Validation
+-flutter pub get; flutter test --reporter expanded; flutter analyze; flutter build apk --debug.
+-Además búsquedas estructurales SOLID, métricas y reutilización temporal de test/ en vibe.
+-Se usa flutter_test disponible para ejecutar tests; el código de dominio no depende de Flutter.
+-No se agrega package:test solo por duplicar el runner.
++- src/domain/cuenta.js: fábrica inmutable {monto, personas, propina}.
++- src/domain/resultado.js: fábrica inmutable {porPersona}.
++- src/domain/estrategiaRedondeo.js: contrato JSDoc aplicar(number): number.
++- src/domain/calcularDivision.js: recibe cuenta validada y estrategia; calcula y devuelve resultado.
++- src/domain/validarEntrada.js: devuelve primer error o null, sin calcular resultado.
++- src/data/redondeoExacto.js: aritmética de centavos.
++- src/data/redondeoHaciaArriba.js: Math.ceil.
++- src/presentation/useDivisor.js: parsea texto, valida, coordina y mantiene useState.
++- src/presentation/formateadorMoneda.js: dos decimales, sin localización variable.
++- src/presentation/PantallaDivisor.jsx: formulario accesible y resultado/error excluyentes.
++- src/presentation/divisor.css: teal heredado, foco visible, formulario responsive.
++- src/main.jsx: único punto de composición concreto de producción y montaje DOM.
++- test/casosDePrueba.js: seis escenarios, escritos por agente por autorización posterior.
++- test/division.test.js: un it por caso, error literal, toBeCloseTo(esperado, 2), LSP.
++- test/pantalla.test.jsx: tres pruebas obligatorias y regresiones de presentación separadas.
++- test/validacion.test.js: límites de spec y sustitución por tercera estrategia.
++- test/setup.js y vite.config.js: jsdom y limpieza tras cada prueba.
++
++## Decisions and Validation
++Parseo completo (no parseFloat parcial): coma decimal aceptada, vacío de monto inválido,
++personas entero positivo; propina vacía inválida como en sdd. No se importa el comportamiento
++posterior de sdd-interactivo. Valores iniciales 2 personas, 0% y exacto.
++Errores retiran resultados anteriores. Validar desbordamiento antes de calcular.
++Una app sin red de negocio funciona con servidor local desconectado de Internet; no se
++promete reapertura sin servidor ni PWA (fuera de alcance).
++Ejecutar suite dominio, suite completa, lint, build, grep SOLID y navegador desktop/móvil.
++Converge revisará FR-001..006, SC-001..004, seis escenarios, supuestos y cinco principios.
++
++## Complexity Tracking
++No excepciones a la Constitution. Formularios nativos y CSS sin dependencias extra.
++## Research and design artifacts
++research.md, data-model.md, contracts/interfaz.md y quickstart.md resuelven el diseño.
++
++
++## Ajustes de verificación
++Vitest 5.0.3 usa pool threads y maxWorkers 1 por timeout observado de forks en Windows.
++No cambian casos ni expectativas. Versiones resueltas actualizadas respecto de rangos de plantilla.

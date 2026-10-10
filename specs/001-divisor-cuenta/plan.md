@@ -8,7 +8,7 @@ La spec no se modifica. La etiqueta histórica Feature Branch: sdd se conserva c
 
 ## Technical Context
 - Language/Version: JavaScript ESM; Node observado v24.21.0.
-- Dependencies: React 19.2.8, Vite 8.3.0; versiones resueltas en package-lock.json.
+- Dependencies: React 19.3.0, Vite 8.3.4; versiones resueltas en package-lock.json.
 - Storage: ninguno; sin llamadas de negocio a red, sin backend ni base de datos.
 - Testing: Vitest, jsdom, Testing Library y jest-dom; runner npm test = vitest run.
 - Target Platform: navegador web desktop/móvil; build estático servido localmente sin Internet.
@@ -57,3 +57,7 @@ No excepciones a la Constitution. Formularios nativos y CSS sin dependencias ext
 ## Research and design artifacts
 research.md, data-model.md, contracts/interfaz.md y quickstart.md resuelven el diseño.
 
+
+## Ajustes de verificación
+Vitest 5.0.3 usa pool threads y maxWorkers 1 por timeout observado de forks en Windows.
+No cambian casos ni expectativas. Versiones resueltas actualizadas respecto de rangos de plantilla.

@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-10T00:36:21.7323536Z",
+  "title": "Design System: Divisor de cuenta",
+  "extensions": {
+    "motion": [],
+    "breakpoints": [
+      {
+        "value": "420px",
+        "name": "mobile"
+      }
+    ],
+    "shadows": []
+  },
+  "components": [
+    {
+      "refersTo": "button-primary",
+      "description": "Acción de cálculo del formulario.",
+      "kind": "button",
+      "html": "<button class=\"ds-button\">Calcular</button>",
+      "name": "Calcular",
+      "css": ".ds-button{font:650 16px \"Segoe UI\",system-ui,sans-serif;width:100%;min-height:52px;border:0;border-radius:8px;background:var(--acento,#00695c);color:white;cursor:pointer}.ds-button:hover{background:#004d43}.ds-button:active{background:#003f37}.ds-button:focus-visible{outline:3px solid #087f70;outline-offset:3px}"
+    },
+    {
+      "refersTo": "input",
+      "description": "Campo decimal con etiqueta visible.",
+      "kind": "input",
+      "html": "<label class=\"ds-label\" for=\"ds-monto\">Monto total</label><input class=\"ds-input\" id=\"ds-monto\" inputmode=\"decimal\" placeholder=\"0.00\">",
+      "name": "Monto total",
+      "css": ".ds-label{display:block;margin-bottom:8px;font:600 14px \"Segoe UI\",system-ui,sans-serif;color:#173a36}.ds-input{font:16px \"Segoe UI\",system-ui,sans-serif;width:100%;min-height:48px;border:1px solid var(--borde,#90aaa4);border-radius:8px;padding:12px 14px;background:white;color:#173a36;caret-color:var(--acento,#00695c);font-variant-numeric:tabular-nums}.ds-input::placeholder{color:#617770}.ds-input:hover{border-color:var(--acento,#00695c)}.ds-input:focus-visible{outline:3px solid #087f70;outline-offset:3px}"
+    },
+    {
+      "refersTo": "panel",
+      "description": "Superficie del formulario sin sombra.",
+      "kind": "card",
+      "html": "<section class=\"ds-panel\">Formulario de división</section>",
+      "name": "Panel",
+      "css": ".ds-panel{font:16px \"Segoe UI\",system-ui,sans-serif;color:#173a36;background:white;border:1px solid #c9d9d4;border-radius:16px;padding:32px}"
+    },
+    {
+      "name": "Pago por persona",
+      "css": ".ds-result{font-family:\"Segoe UI\",system-ui,sans-serif;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 20px}.ds-result span{font-size:14px;color:var(--secundario,#48655f)}.ds-result output{font-size:36px;font-weight:650;font-variant-numeric:tabular-nums;color:var(--acento,#00695c);overflow-wrap:anywhere}",
+      "html": "<div class=\"ds-result\"><span>Pago por persona</span><output>27.50</output></div>",
+      "description": "Respuesta numérica legible y adaptable.",
+      "kind": "custom"
+    },
+    {
+      "name": "Error",
+      "css": ".ds-error{font:16px/1.5 \"Segoe UI\",system-ui,sans-serif;margin:0;color:#9b252b;background:#fff2f1;padding:12px;border-radius:8px}",
+      "html": "<p class=\"ds-error\" role=\"alert\">Debe haber al menos una persona</p>",
+      "description": "Sustituye al resultado cuando falla la validación.",
+      "kind": "custom"
+    }
+  ],
+  "narrative": {
+    "donts": [
+      "Don't mostrar el pago anterior junto a un error de validación.",
+      "Don't ampliar esta migración con login, historial o nuevas pantallas."
+    ],
+    "dos": [
+      "Do conservar el teal heredado y las etiquetas explícitas.",
+      "Do mantener el resultado legible y el foco de teclado visible."
+    ],
+    "overview": "Migración de un formulario Flutter Material a una pantalla web. Conserva el teal y la secuencia de monto, personas, propina y redondeo. Esta documentación describe la implementación observada; no establece una identidad nueva."
+  }
+}

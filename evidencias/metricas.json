@@ -1,0 +1,23 @@
+{
+  "enunciadosSpec": 61,
+  "que": 61,
+  "como": 0,
+  "mixto": 0,
+  "intactoPct": 100,
+  "constitution": {
+    "total": 16,
+    "adaptadas": 6,
+    "identicas": 10,
+    "reemplazadas": 0
+  },
+  "plan": {
+    "decisiones": 42,
+    "modificadas": 29
+  },
+  "tiemposAcademicos": "no registrado",
+  "operativos": {
+    "inicio": "2026-10-10T00:24:15.836Z",
+    "buildMinutos": 3.36,
+    "confirmacionSeisMinutos": 3.9
+  }
+}

@@ -1,0 +1,56 @@
+
+> divisor_cuenta_web@0.0.0 test
+> vitest run --reporter=verbose
+
+
+ RUN  v5.0.3 C:/Users/sebas/Documents/Codex/2026-10-09/files-mentioned-by-the-user-deber2/outputs/divisor_cuenta_web
+
+⎯⎯⎯⎯⎯⎯ Unhandled Errors ⎯⎯⎯⎯⎯⎯
+
+Vitest caught 3 unhandled errors during the test run.
+This might cause false positive tests. Resolve unhandled errors to make sure your tests are not affected.
+
+⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯
+Error: [vitest-pool]: Failed to start forks worker for test files C:/Users/sebas/Documents/Codex/2026-10-09/files-mentioned-by-the-user-deber2/outputs/divisor_cuenta_web/test/pantalla.test.jsx.
+ ❯ node_modules/vitest/dist/chunks/index.DpLw24bj.js:11538:94
+ ❯ Pool.schedule node_modules/vitest/dist/chunks/index.DpLw24bj.js:11538:5
+
+Caused by: Error: [vitest-pool-runner]: Timeout waiting for worker to respond
+ ❯ Timeout.<anonymous> node_modules/vitest/dist/chunks/index.DpLw24bj.js:11035:58
+ ❯ listOnTimeout node:internal/timers:685:17
+ ❯ process.processTimers node:internal/timers:618:7
+
+
+⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯
+Error: [vitest-pool]: Failed to start forks worker for test files C:/Users/sebas/Documents/Codex/2026-10-09/files-mentioned-by-the-user-deber2/outputs/divisor_cuenta_web/test/division.test.js.
+ ❯ node_modules/vitest/dist/chunks/index.DpLw24bj.js:11538:94
+ ❯ runNextTicks node:internal/process/task_queues:65:5
+ ❯ listOnTimeout node:internal/timers:644:9
+ ❯ process.processTimers node:internal/timers:618:7
+ ❯ Pool.schedule node_modules/vitest/dist/chunks/index.DpLw24bj.js:11538:5
+
+Caused by: Error: [vitest-pool-runner]: Timeout waiting for worker to respond
+ ❯ Timeout.<anonymous> node_modules/vitest/dist/chunks/index.DpLw24bj.js:11035:58
+ ❯ listOnTimeout node:internal/timers:685:17
+ ❯ process.processTimers node:internal/timers:618:7
+
+
+⎯⎯⎯⎯⎯⎯ Unhandled Error ⎯⎯⎯⎯⎯⎯⎯
+Error: [vitest-pool]: Failed to start forks worker for test files C:/Users/sebas/Documents/Codex/2026-10-09/files-mentioned-by-the-user-deber2/outputs/divisor_cuenta_web/test/validacion.test.js.
+ ❯ node_modules/vitest/dist/chunks/index.DpLw24bj.js:11538:94
+ ❯ Pool.schedule node_modules/vitest/dist/chunks/index.DpLw24bj.js:11538:5
+
+Caused by: Error: [vitest-pool-runner]: Timeout waiting for worker to respond
+ ❯ Timeout.<anonymous> node_modules/vitest/dist/chunks/index.DpLw24bj.js:11035:58
+ ❯ listOnTimeout node:internal/timers:685:17
+ ❯ process.processTimers node:internal/timers:618:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯
+
+
+ Test Files  no tests
+      Tests  no tests
+     Errors  3 errors
+   Start at  19:26:27
+   Duration  60.12s
+

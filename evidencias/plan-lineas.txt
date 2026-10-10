@@ -1,0 +1,1 @@
+55	34	{evidencias/original => specs/001-divisor-cuenta}/plan.md

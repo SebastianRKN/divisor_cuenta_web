@@ -1,0 +1,7 @@
+{
+  "SRP": "PASS cálculo sin validación/formato",
+  "OCP": "PASS estrategia recibida",
+  "LSP": "PASS sin tipos concretos; pruebas con tres estrategias",
+  "ISP": "PASS aplicar(valor)",
+  "DIP": "PASS presentación sin data; dominio sin React/DOM"
+}
