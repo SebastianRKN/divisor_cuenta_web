@@ -26,7 +26,7 @@ Fecha: 9 de octubre de 2026, America/Guayaquil. Los logs conservan además fecha
 | Cronómetro según envío de prompt | No registrado | Prompt agrupó fases; marcadores operativos separados |
 | Escritura manual de casos JS | Pendiente académico | Usuario pidió al agente hacerlo; no se atribuye autoría manual |
 | Clasificación personal y defensa de funciones | Pendiente académico | analisis_spec.md y GUIA_FUNCIONES.md son apoyo |
-| Publicación GitHub | Ver estado en evidencias/publicacion.txt | No sobrescribir repositorio Flutter |
+| Publicación GitHub | Completado | React main y bitácora Flutter sdd publicados; evidencias/publicacion.txt |
 | Secretos | Verificado por revisión y escaneo de archivos preparados | Credencial GCM usada en memoria, nunca versionada |
 
 ## Proyectos
@@ -64,6 +64,22 @@ Lista completa: evidencias/archivos-finales.txt. Historial real: evidencias/hist
 Commits por etapas: base Vite; Spec Kit+copia; Constitution; plan/tareas;
 implementación aprobada; documentación/evidencias. El historial permite revisar cada etapa.
 Los ajustes del plan posteriores fueron versiones instaladas reales y pool de pruebas.
+
+| Commit React | Etapa |
+|---|---|
+| 3ecdb58 | proyecto react base, sin tocar |
+| a0186dd | spec kit + la misma spec del proyecto flutter |
+| 2abe73c | constitucion adaptada para react |
+| 7aff1a4 | plan y tareas para react (la spec no se toco) |
+| 95358e8 | divisor de cuenta en react, los 6 casos pasan |
+| fedaaca | documentacion y evidencias finales |
+
+Flutter: `c61881b` añade únicamente bitacora.md sobre `92fc101`.
+React publicado: https://github.com/SebastianRKN/divisor_cuenta_web
+Flutter publicado: https://github.com/SebastianRKN/app_divisor_de_cuentas/tree/sdd
+Un commit posterior registra la publicación y actualiza este índice; consultar git log.
+Diff físico del plan: 55 líneas añadidas y 34 eliminadas (89 operaciones de línea),
+distinto de las 29 decisiones modificadas del inventario semántico.
 
 ## Límites pendientes
 El estudiante debe revisar las seis respuestas y clasificación, explicar las funciones y

@@ -3,3 +3,4 @@ a0186dd spec kit + la misma spec del proyecto flutter
 2abe73c constitucion adaptada para react
 7aff1a4 plan y tareas para react (la spec no se toco)
 95358e8 divisor de cuenta en react, los 6 casos pasan
+fedaaca documentacion y evidencias finales

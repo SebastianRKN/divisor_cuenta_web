@@ -41,6 +41,7 @@ analisis_spec.md
 bitacora.md
 evidencias/analyze-prerequisites.json
 evidencias/analyze.md
+evidencias/archivos-finales.txt
 evidencias/browser-qa-script.cjs
 evidencias/browser-qa.json
 evidencias/build-final.log
@@ -61,8 +62,10 @@ evidencias/division.log
 evidencias/error-movil.png
 evidencias/exit-codes.json
 evidencias/flujo-speckit.md
+evidencias/flutter-preservado.txt
 evidencias/flutter-pub-get.log
 evidencias/flutter-test.log
+evidencias/historial-flutter.txt
 evidencias/historial.txt
 evidencias/implement-prerequisites.json
 evidencias/inicio-plan-utc.txt
@@ -80,7 +83,9 @@ evidencias/original/tasks.md
 evidencias/plan-lineas.txt
 evidencias/plan.diff
 evidencias/primer-build-utc.txt
+evidencias/publicacion.txt
 evidencias/revision-visual.md
+evidencias/security-scan.json
 evidencias/seis-casos-utc.txt
 evidencias/setup-plan.json
 evidencias/setup-tasks.json

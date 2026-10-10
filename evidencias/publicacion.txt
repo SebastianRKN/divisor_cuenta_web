@@ -1,0 +1,5 @@
+Autenticación GitHub: SebastianRKN
+PUBLICADO: https://github.com/SebastianRKN/divisor_cuenta_web
+FLUTTER: https://github.com/SebastianRKN/app_divisor_de_cuentas/tree/sdd
+Commit Flutter c61881b publicado sobre 92fc101; único cambio: bitacora.md.
+Git Credential Manager utilizado en memoria; ninguna credencial se guardó en el repositorio.
