@@ -1,0 +1,2 @@
+$env:SPECIFY_FEATURE_DIRECTORY = Join-Path $PSScriptRoot 'specs/001-divisor-cuenta'
+Write-Output "SPECIFY_FEATURE_DIRECTORY=$env:SPECIFY_FEATURE_DIRECTORY"
