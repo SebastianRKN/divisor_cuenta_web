@@ -1,50 +1,36 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# Divisor de cuenta web Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. SRP
+Una función o módulo tiene una razón de cambio. El cálculo no valida ni formatea.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. OCP
+Agregar una regla de redondeo no obliga a modificar los módulos de cálculo existentes.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. LSP
+Cualquier EstrategiaRedondeo puede sustituir a otra sin casts ni comprobaciones de tipo.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. ISP
+Interfaces pequeñas. EstrategiaRedondeo expone solamente una operación necesaria: aplicar.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. DIP
+presentation depende de abstracciones de domain, nunca de implementaciones concretas de data.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Arquitectura y seguridad
+- Capas presentation / domain / data; dependencia presentation -> domain <- data.
+- src/domain/ no importa react ni depende del DOM: es JavaScript puro.
+- src/main.jsx es el único punto de composición de implementaciones concretas en producción.
+- Nunca guardar secretos ni API keys.
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+## Calidad, pruebas y regla de la materia
+- Funcionalidad crítica con pruebas; criterios de aceptación convertidos en pruebas ejecutables.
+- Toda función debe poder explicarse: qué hace, por qué existe, qué recibe, qué devuelve y qué errores produce.
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+Esta versión registra las reglas solicitadas, sin principios adicionales.
+Las verificaciones se documentan en analyze.md y en la evidencia de la práctica.
+La restricción de composición se aplica a src/; las pruebas crean sus estrategias para verificar LSP.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
+**Version**: 1.0.1 | **Ratified**: 2026-10-01 | **Last Amended**: 2026-10-09
 
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
